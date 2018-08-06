@@ -31,4 +31,8 @@ class Alarm < ApplicationRecord
     upvotes.where(positive:true).count - upvotes.where(positive:false).count
   end
   
+  def weight
+    created_at.to_i + score*120
+  end
+  
 end

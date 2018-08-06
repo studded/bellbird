@@ -30,6 +30,7 @@
 	border: 1px solid black;
 	border-radius: 10px;
 	margin: 10px;
+	margin-left:0;
 	padding: 10px;
 	background-color: lightblue;
 	min-height:40px;
@@ -55,5 +56,11 @@
 }
 .negative {
 	color: red;
+}
+.errors_div {
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px;
+	background-color: red;
 }
 </style>

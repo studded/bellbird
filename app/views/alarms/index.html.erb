@@ -1,11 +1,18 @@
 <div id="container">
 
-<%= flash[:error] %>
+<% if flash[:error].present? %>
+	<div class="errors_div">
+	<% flash[:error].each do |obj,errs| %>
+		<% errs.each do |err| %>
+			<%= "#{obj.titleize} #{err}"%>
+		<% end %>
+	<% end %>
+	</div>
+<% end %>
 
 <div id="all_alarms">
 <% @alarms.each do |alarm| %>
 	<div class="alarm_div">
-		<%= alarm.username %>: <%= alarm.message %>
 		<div class="upvote_div">
 			<div class="upvote_score">
 				<% if alarm.score < 0 %>
@@ -29,6 +36,7 @@
 			<% end %>
 			</div>
 		</div>
+		<%= alarm.username %>: <%= alarm.message %>
 	</div>
 <% end %>
 </div>
