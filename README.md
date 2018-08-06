@@ -1,24 +1,17 @@
-# README
+# BELLBIRD PROJECT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Code Day Interview
 
-Things you may want to cover:
+Functionality:
 
-* Ruby version
+* Create alarms
 
-* System dependencies
+* List alarms, sorted by creation time or upvotes
 
-* Configuration
+* Alarms must be ALL CAPS
 
-* Database creation
+* Alarms are posted to notification API
 
-* Database initialization
+* Alarms may be upvoted
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Persist alarms and upvotes (but not users)
