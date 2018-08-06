@@ -1,0 +1,27 @@
+<div id="container">
+
+<div id="all_alarms">
+<% @alarms.each do |alarm| %>
+	<div class="alarm_div">
+		<%= alarm.username %>: <%= alarm.message %>
+	</div>
+<% end %>
+</div>
+
+<div id="post_alarm">
+<%= form_tag method: 'post' do %>
+	<div>
+		<%= label_tag 'Username:' %>
+		<%= text_field_tag :username %>
+	</div>
+	<div>
+		<%= label_tag 'Message:' %>
+		<%= text_field_tag :message %>
+	</div>
+	<div class="submit">
+		<%= submit_tag 'Post' %>
+	</div>
+<% end %>
+</div>
+
+</div>
