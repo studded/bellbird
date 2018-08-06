@@ -26,10 +26,34 @@
 	margin-top:5px;
 }
 .alarm_div {
+	clear:both;
 	border: 1px solid black;
 	border-radius: 10px;
 	margin: 10px;
 	padding: 10px;
 	background-color: lightblue;
+	min-height:40px;
+}
+
+.upvote_div {
+	font-family:monospace;
+	float: left;
+	height:40px;
+	width:50px;
+	padding-right:10px;
+	text-align:right;
+}
+.upvote_score {
+	float:left;
+	padding-top:10px;
+	width:24px;
+	text-align:center;
+	overflow:hidden;
+}
+.upvote_buttons {
+	float:right;
+}
+.negative {
+	color: red;
 }
 </style>

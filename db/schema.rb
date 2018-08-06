@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2018_08_06_164931) do
 
   create_table "upvotes", force: :cascade do |t|
     t.integer "alarm_id"
-    t.boolean "upvote"
+    t.integer "positive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["alarm_id"], name: "index_upvotes_on_alarm_id"

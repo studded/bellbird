@@ -1,15 +1,40 @@
 <div id="container">
 
+<%= flash[:error] %>
+
 <div id="all_alarms">
 <% @alarms.each do |alarm| %>
 	<div class="alarm_div">
 		<%= alarm.username %>: <%= alarm.message %>
+		<div class="upvote_div">
+			<div class="upvote_score">
+				<% if alarm.score < 0 %>
+					<span class="negative">
+				<% else %>
+					<span>
+				<% end %>
+					<%= alarm.score %>
+				<span>
+			</div>
+			<div class="upvote_buttons">
+			<%= form_tag controller: :upvotes, action: :create do %>
+				<%= hidden_field_tag 'alarm_id', alarm.id %>
+				<%= hidden_field_tag 'positive', 'true' %>
+				<%= submit_tag '↑' %>
+			<% end %>
+			<%= form_tag controller: :upvotes, action: :create do %>
+				<%= hidden_field_tag 'alarm_id', alarm.id %>
+				<%= hidden_field_tag 'positive', 'false' %>
+				<%= submit_tag '↓' %>
+			<% end %>
+			</div>
+		</div>
 	</div>
 <% end %>
 </div>
 
 <div id="post_alarm">
-<%= form_tag method: 'post' do %>
+<%= form_tag action: :create do %>
 	<div>
 		<%= label_tag 'Username:' %>
 		<%= text_field_tag :username %>
